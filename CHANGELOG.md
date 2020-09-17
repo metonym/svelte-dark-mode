@@ -9,6 +9,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Set theme in `document.body` or `document.documentElement` by default
 
+## [0.1.1](https://github.com/metonym/svelte-dark-mode/releases/tag/v0.1.1) - 2020-09-17
+
+**Fixes**
+
+- Fix bug where initial theme switch is not persisted in `window.localStorage`
+
 ## [0.1.0](https://github.com/metonym/svelte-dark-mode/releases/tag/v0.1.0) - 2020-04-21
 
 - Initial release
