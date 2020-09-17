@@ -4,7 +4,7 @@
   "scripts": {
     "develop": "sapper dev",
     "build": "sapper export --basepath svelte-dark-mode",
-    "deploy": "node gh-pages"
+    "deploy": "npx gh-pages -d public/svelte-dark-mode"
   },
   "dependencies": {
     "polka": "next",
@@ -12,10 +12,9 @@
   },
   "devDependencies": {
     "@metonym/sapper": "^0.27.12",
-    "gh-pages": "^2.2.0",
-    "svelte": "^3.0.0",
+    "svelte": "^3.25.1",
+    "svelte-dark-mode": "../",
     "svelte-loader": "^2.9.0",
-    "webpack": "^4.7.0",
-    "svelte-dark-mode": "../"
+    "webpack": "^4.44.1"
   }
 }
