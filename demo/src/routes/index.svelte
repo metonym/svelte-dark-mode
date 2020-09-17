@@ -48,7 +48,11 @@
   <title>svelte-dark-mode</title>
 </svelte:head>
 
-<DarkMode bind:theme />
+<DarkMode
+  bind:theme
+  on:change={(e) => {
+    console.log(e.detail);
+  }} />
 
 <h1>This is {theme} mode.</h1>
 
@@ -61,15 +65,13 @@
 </button>
 
 <p>
-  This component uses
-  <a
+  This component uses <a
     href="https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage"
     target="_blank"
     rel="noopener noreferrer">
     window.localStorage
-  </a>
-  to persist the theme locally. If you reload the page, the browser will
-  remember the theme.
+  </a> to persist the theme locally. If you reload the page, the browser will remember
+  the theme.
 </p>
 
 <p>
