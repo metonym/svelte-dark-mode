@@ -13,11 +13,13 @@ The preferred theme is persisted locally using [window.localStorage](https://dev
 
 ```bash
 yarn add -D svelte-dark-mode
+# OR
+npm -i -D svelte-dark-mode
 ```
 
 ## Usage
 
-The `theme` is set to either `"dark"` or `"light"` based on the user’s system preference.
+The initial `theme` is set to either `"dark"` or `"light"` based on the user’s system preference.
 
 ```html
 <script>
