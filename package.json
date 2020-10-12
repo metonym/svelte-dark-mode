@@ -4,15 +4,12 @@
   "license": "MIT",
   "description": "Support dark mode in your Svelte apps",
   "author": "Eric Liu (https://github.com/metonym)",
-  "svelte": "src/index.js",
-  "main": "lib/index.js",
-  "module": "lib/index.mjs",
+  "svelte": "./src/index.js",
+  "main": "./lib/index.js",
+  "module": "./lib/index.mjs",
   "sideEffects": false,
   "scripts": {
     "prepack": "rollup -c"
-  },
-  "peerDependencies": {
-    "svelte": "^3.20.x"
   },
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^9.0.0",
