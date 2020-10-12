@@ -14,7 +14,7 @@ The preferred theme is persisted locally using [window.localStorage](https://dev
 ```bash
 yarn add -D svelte-dark-mode
 # OR
-npm -i -D svelte-dark-mode
+npm i -D svelte-dark-mode
 ```
 
 ## Usage
