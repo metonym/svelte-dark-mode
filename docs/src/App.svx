@@ -1,18 +1,24 @@
+# {name} v{version}
+
 <script>
   import DarkMode from "svelte-dark-mode";
   import { afterUpdate } from "svelte";
 
   let theme;
 
+  $: switchTheme = theme === "dark" ? "light" : "dark";
+
   afterUpdate(() => {
     document.body.className = theme;
   });
 
-  $: switchTheme = theme === "dark" ? "light" : "dark";
+  let name = process.env.NAME;
+  let version = process.env.VERSION;
 </script>
 
 <style>
   :global(body) {
+    font-family: sans-serif;
     line-height: 1.42;
   }
 
@@ -44,24 +50,20 @@
   }
 </style>
 
-<svelte:head>
-  <title>svelte-dark-mode</title>
-</svelte:head>
-
 <DarkMode
-  bind:theme
-  on:change={(e) => {
-    console.log(e.detail);
-  }} />
+bind:theme
+on:change={(e) => {
+console.log(e.detail);
+}} />
 
-<h1>This is {theme} mode.</h1>
+## This is {theme} mode.
 
 <button
-  type="button"
-  on:click={() => {
-    theme = switchTheme;
-  }}>
-  Switch to {switchTheme} mode
+type="button"
+on:click={() => {
+theme = switchTheme;
+}}>
+Switch to {switchTheme} mode
 </button>
 
 <p>
@@ -78,3 +80,37 @@
   If you change the color scheme in your System Preferences, the theme will
   update accordingly when the page is reloaded.
 </p>
+
+## Sample code
+
+```html
+<script>
+  import DarkMode from "svelte-dark-mode";
+  import { afterUpdate } from "svelte";
+
+  let theme;
+
+  $: switchTheme = theme === "dark" ? "light" : "dark";
+
+  afterUpdate(() => {
+    document.body.className = theme;
+  });
+</script>
+
+<style>
+  :global(.dark) {
+    background-color: #262626;
+    color: #f4f4f4;
+  }
+
+  :global(.dark a) {
+    color: #f4f4f4;
+  }
+</style>
+
+<DarkMode bind:theme />
+
+<button type="button" on:click={() => { theme = switchTheme; }}>
+  Switch to {switchTheme} mode
+</button>
+```
