@@ -1,12 +1,10 @@
 <script>
   /**
-   * @type {null | "dark" | "light"} [theme=null]
+   * @typedef {null | "dark" | "light"} Theme
    */
-  export let theme = null;
 
-  /**
-   * @type {string} [key="theme"]
-   */
+  /** @type {Theme} */
+  export let theme = null;
   export let key = "theme";
 
   import { onMount, afterUpdate, createEventDispatcher } from "svelte";
@@ -35,6 +33,7 @@
 
   afterUpdate(() => {
     if (theme) {
+      /** @event {Theme} change */
       dispatch("change", theme);
       localStorage.setItem(key, theme);
     }
