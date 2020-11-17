@@ -11,7 +11,7 @@ The preferred theme is persisted locally using [window.localStorage](https://dev
 
 ## Install
 
-```bash
+```sh
 yarn add -D svelte-dark-mode
 # OR
 npm i -D svelte-dark-mode
@@ -21,7 +21,7 @@ npm i -D svelte-dark-mode
 
 The initial `theme` is set to either `"dark"` or `"light"` based on the user’s system preference.
 
-```html
+```svelte
 <script>
   import DarkMode from "svelte-dark-mode";
 
@@ -44,7 +44,7 @@ The initial `theme` is set to either `"dark"` or `"light"` based on the user’s
 
 If your app uses server-side rendering (SSR), you may need to employ the `afterUpdate` lifecycle hook because `document` is a browser API.
 
-```html
+```svelte
 <script>
   import DarkMode from "svelte-dark-mode";
   import { afterUpdate } from "svelte";
@@ -65,7 +65,7 @@ If the user changes their color scheme preference at the system level, the theme
 
 By default, this component uses `"theme"` as the key to persist the theme. Supply your own value through the `"key"` prop.
 
-```html
+```svelte
 <DarkMode key="custom-theme-key" />
 ```
 
