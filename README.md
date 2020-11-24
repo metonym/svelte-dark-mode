@@ -7,11 +7,13 @@
 
 This component sets the theme based on the user’s preferred color scheme using [window.matchMedia](https://developer.mozilla.org/en-US/docs/Web/API/Window/matchMedia).
 
-The preferred theme is persisted locally using [window.localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage).
+The preferred theme is persisted locally with the [window.localStorage API](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage).
+
+This component ships with [TypeScript definitions](types).
 
 ## Install
 
-```sh
+```bash
 yarn add -D svelte-dark-mode
 # OR
 npm i -D svelte-dark-mode
@@ -27,29 +29,34 @@ The initial `theme` is set to either `"dark"` or `"light"` based on the user’s
 
   let theme;
 
+  $: switchTheme = theme === "dark" ? "light" : "dark";
   $: document.body.className = theme; // "dark" or "light"
 </script>
 
 <style>
   :global(.dark) {
-    background-color: #262626;
-    color: #f4f4f4;
+    background: #032f62;
+    color: #f1f8ff;
   }
 </style>
 
 <DarkMode bind:theme />
+
+<h1>This is {theme} mode.</h1>
+<p>Change the theme and reload the page. The theme should be persisted.</p>
+
+<button type="button" on:click={() => { theme = switchTheme; }}>
+  Switch to {switchTheme} mode
+</button>
 ```
 
 ### Server-side rendering (SSR)
 
-If your app uses server-side rendering (SSR), you may need to employ the `afterUpdate` lifecycle hook because `document` is a browser API.
+If your app uses server-side rendering (SSR), you may need to employ the `afterUpdate` lifecycle hook because `document` is a client-side API.
 
-```svelte
+```html
 <script>
-  import DarkMode from "svelte-dark-mode";
   import { afterUpdate } from "svelte";
-
-  let theme;
 
   afterUpdate(() => {
     document.body.className = theme;
@@ -63,9 +70,9 @@ If the user changes their color scheme preference at the system level, the theme
 
 ### Custom `localStorage` key
 
-By default, this component uses `"theme"` as the key to persist the theme. Supply your own value through the `"key"` prop.
+By default, this component uses `"theme"` as the key to persist the theme. Supply your own local storage key using the `"key"` prop.
 
-```svelte
+```html
 <DarkMode key="custom-theme-key" />
 ```
 
@@ -75,19 +82,36 @@ localStorage.getItem("custom-theme-key"); // "dark" || "light"
 
 ## API
 
-| Property name | Value                                   |
-| :------------ | :-------------------------------------- |
-| theme         | `"dark"` or `"light"` (default: `null`) |
-| key           | `string` (default: `"theme"`)           |
+| Prop name | Value                                   |
+| :-------- | :-------------------------------------- |
+| theme     | `"dark"` or `"light"` (default: `null`) |
+| key       | `string` (default: `"theme"`)           |
 
 ### Dispatched events
 
-```jsx
+This component dispatches a `"change"` event when the theme is updated.
+
+```svelte
+<script>
+  let events = [];
+</script>
+
+<button
+  type="button"
+  on:click={() => { theme = switchTheme; }}
+>
+  Toggle theme
+</button>
+
 <DarkMode
-  on:change={({ detail }) => {
-    console.log(detail.theme); // "dark" | "light"
+  bind:theme
+  on:change={(e) => {
+    events = [...events, e.detail];
+    console.log(e.detail); // "dark" | "light"
   }}
 />
+
+{events.join(', ')}
 ```
 
 ## [Changelog](CHANGELOG.md)
