@@ -120,7 +120,7 @@ This component dispatches a `"change"` event when the theme is updated.
 
 [MIT](LICENSE)
 
-[npm]: https://img.shields.io/npm/v/svelte-dark-mode.svg?color=blue
+[npm]: https://img.shields.io/npm/v/svelte-dark-mode.svg?color=blue&style=for-the-badge
 [npm-url]: https://npmjs.com/package/svelte-dark-mode
-[build]: https://travis-ci.com/metonym/svelte-dark-mode.svg?branch=master
+[build]: https://img.shields.io/travis/com/metonym/svelte-dark-mode?style=for-the-badge
 [build-badge]: https://travis-ci.com/metonym/svelte-dark-mode
