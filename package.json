@@ -13,13 +13,16 @@
     "dev": "rollup -cw",
     "predeploy": "rollup -c",
     "deploy": "npx gh-pages -d dist",
-    "prepack": "BUNDLE=true rollup -c"
+    "prepack": "BUNDLE=true rollup -c",
+    "svelte-check": "svelte-check"
   },
   "devDependencies": {
-    "rollup": "^2.33.3",
+    "@rollup/plugin-node-resolve": "^11.0.1",
+    "rollup": "^2.35.1",
     "rollup-plugin-svelte": "^7.0.0",
-    "svelte": "^3.29.7",
-    "svelte-readme": "^1.1.0"
+    "svelte": "^3.31.0",
+    "svelte-check": "^1.1.23",
+    "svelte-readme": "^1.3.0"
   },
   "repository": {
     "type": "git",

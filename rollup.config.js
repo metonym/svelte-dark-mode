@@ -10,7 +10,6 @@ export default () => {
   if (!BUNDLE) {
     return svelteReadme({
       minify: !DEV,
-      prefixUrl: "https://github.com/metonym/svelte-dark-mode/tree/master/",
       style: `
         body.dark .code-fence {
           background: #032f62;

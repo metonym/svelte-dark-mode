@@ -9,7 +9,7 @@ This component sets the theme based on the user’s preferred color scheme using
 
 The preferred theme is persisted locally with the [window.localStorage API](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage).
 
-This component ships with [TypeScript definitions](types).
+<!-- TOC -->
 
 ## Install
 
@@ -114,7 +114,13 @@ This component dispatches a `"change"` event when the theme is updated.
 {events.join(', ')}
 ```
 
-## [Changelog](CHANGELOG.md)
+## TypeScript
+
+To use this component with TypeScript, you will need `svelte` version 3.31 or greater.
+
+## Changelog
+
+[CHANGELOG.md](CHANGELOG.md)
 
 ## License
 

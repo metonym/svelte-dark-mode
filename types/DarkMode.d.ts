@@ -1,6 +1,7 @@
 /// <reference types="svelte" />
+import { SvelteComponentTyped } from "svelte";
 
-type Theme = null | "dark" | "light";
+export type Theme = null | "dark" | "light";
 
 export interface DarkModeProps {
   /**
@@ -14,10 +15,8 @@ export interface DarkModeProps {
   key?: string;
 }
 
-export default class DarkMode {
-  $$prop_def: DarkModeProps;
-  $$slot_def: {};
-
-  $on(eventname: "change", cb: (event: CustomEvent<Theme>) => void): () => void;
-  $on(eventname: string, cb: (event: Event) => void): () => void;
-}
+export default class DarkMode extends SvelteComponentTyped<
+  DarkModeProps,
+  { change: CustomEvent<Theme> },
+  {}
+> {}
