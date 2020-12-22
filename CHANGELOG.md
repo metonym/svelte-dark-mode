@@ -9,6 +9,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Set theme in `document.body` or `document.documentElement` by default
 
+## [0.3.0](https://github.com/metonym/svelte-dark-mode/releases/tag/v0.3.0) - 2020-12-22
+
+- use `SvelteComponentTyped` interface in TypeScript definitions
+
 ## [0.2.0](https://github.com/metonym/svelte-dark-mode/releases/tag/v0.2.0) - 2020-11-17
 
 - add TypeScript definitions

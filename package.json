@@ -1,6 +1,6 @@
 {
   "name": "svelte-dark-mode",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "license": "MIT",
   "description": "Support dark mode in your Svelte apps",
   "author": "Eric Liu (https://github.com/metonym)",
