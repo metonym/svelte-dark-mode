@@ -45,7 +45,7 @@ The initial `theme` is set to either `"dark"` or `"light"` based on the user’s
 <h1>This is {theme} mode.</h1>
 <p>Change the theme and reload the page. The theme should be persisted.</p>
 
-<button type="button" on:click={() => { theme = switchTheme; }}>
+<button type="button" on:click={() => (theme = switchTheme)}>
   Switch to {switchTheme} mode
 </button>
 ```
@@ -96,10 +96,7 @@ This component dispatches a `"change"` event when the theme is updated.
   let events = [];
 </script>
 
-<button
-  type="button"
-  on:click={() => { theme = switchTheme; }}
->
+<button type="button" on:click={() => (theme = switchTheme)}>
   Toggle theme
 </button>
 
