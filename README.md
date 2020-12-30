@@ -1,7 +1,6 @@
 # svelte-dark-mode
 
 [![NPM][npm]][npm-url]
-[![Build][build]][build-badge]
 
 > Support dark mode in your Svelte apps.
 
@@ -20,6 +19,8 @@ npm i -D svelte-dark-mode
 ```
 
 ## Usage
+
+### Basic
 
 The initial `theme` is set to either `"dark"` or `"light"` based on the user’s system preference.
 
@@ -52,7 +53,7 @@ The initial `theme` is set to either `"dark"` or `"light"` based on the user’s
 
 ### Server-side rendering (SSR)
 
-If your app uses server-side rendering (SSR), you may need to employ the `afterUpdate` lifecycle hook because `document` is a client-side API.
+If you use server-side rendering (SSR), employ the `afterUpdate` lifecycle when accessing `document.body` or `document.documentElement`.
 
 ```html
 <script>
@@ -82,6 +83,8 @@ localStorage.getItem("custom-theme-key"); // "dark" || "light"
 
 ## API
 
+### Props
+
 | Prop name | Value                                   |
 | :-------- | :-------------------------------------- |
 | theme     | `"dark"` or `"light"` (default: `null`) |
@@ -89,7 +92,7 @@ localStorage.getItem("custom-theme-key"); // "dark" || "light"
 
 ### Dispatched events
 
-This component dispatches a `"change"` event when the theme is updated.
+- **on:change**: dispatched when `theme` is updated
 
 ```svelte
 <script>
@@ -113,7 +116,7 @@ This component dispatches a `"change"` event when the theme is updated.
 
 ## TypeScript
 
-To use this component with TypeScript, you will need `svelte` version 3.31 or greater.
+`svelte` version 3.31 or greater is required to use this component with TypeScript.
 
 ## Changelog
 
@@ -125,5 +128,3 @@ To use this component with TypeScript, you will need `svelte` version 3.31 or gr
 
 [npm]: https://img.shields.io/npm/v/svelte-dark-mode.svg?color=blue&style=for-the-badge
 [npm-url]: https://npmjs.com/package/svelte-dark-mode
-[build]: https://img.shields.io/travis/com/metonym/svelte-dark-mode?style=for-the-badge
-[build-badge]: https://travis-ci.com/metonym/svelte-dark-mode
