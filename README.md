@@ -8,6 +8,10 @@ This component sets the theme based on the user’s preferred color scheme using
 
 The preferred theme is persisted locally with the [window.localStorage API](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage).
 
+<!-- REPO_URL -->
+
+---
+
 <!-- TOC -->
 
 ## Install
