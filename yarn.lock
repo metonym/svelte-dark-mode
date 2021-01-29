@@ -23,10 +23,10 @@
     chalk "^2.0.0"
     js-tokens "^4.0.0"
 
-"@rollup/plugin-node-resolve@^11.0.1":
-  version "11.0.1"
-  resolved "https://registry.npmjs.org/@rollup/plugin-node-resolve/-/plugin-node-resolve-11.0.1.tgz#d3765eec4bccf960801439a999382aed2dca959b"
-  integrity sha512-ltlsj/4Bhwwhb+Nb5xCz/6vieuEj2/BAkkqVIKmZwC7pIdl8srmgmglE4S0jFlZa32K4qvdQ6NHdmpRKD/LwoQ==
+"@rollup/plugin-node-resolve@^11.1.0":
+  version "11.1.1"
+  resolved "https://registry.yarnpkg.com/@rollup/plugin-node-resolve/-/plugin-node-resolve-11.1.1.tgz#47bc34252914794a1b06fb50371d7520a03f91f3"
+  integrity sha512-zlBXR4eRS+2m79TsUZWhsd0slrHUYdRx4JF+aVQm+MI0wsKdlpC2vlDVjmlGvtZY1vsefOT9w3JxvmWSBei+Lg==
   dependencies:
     "@rollup/pluginutils" "^3.1.0"
     "@types/resolve" "1.17.1"
@@ -568,10 +568,10 @@ picomatch@^2.0.4, picomatch@^2.2.1, picomatch@^2.2.2:
   resolved "https://registry.npmjs.org/picomatch/-/picomatch-2.2.2.tgz#21f333e9b6b8eaff02468f5146ea406d345f4dad"
   integrity sha512-q0M/9eZHzmr0AulXyPwNfZjtwZ/RBZlbN3K3CErVrk50T2ASYI7Bye0EvekFY3IP1Nt2DHu0re+V2ZHIpMkuWg==
 
-prettier-plugin-svelte@^1.4.2:
-  version "1.4.2"
-  resolved "https://registry.yarnpkg.com/prettier-plugin-svelte/-/prettier-plugin-svelte-1.4.2.tgz#9a7968bbc78756670c816f22c0e83f98785031a0"
-  integrity sha512-O9VsNwII+raTG8QPoQWouk5ABQy/hmLm4dZ2eqJ7DPnbO35A+BxMSjlfqkw0cNP+UcbykHFYU8zNXm93ytWP9g==
+prettier-plugin-svelte@^2.1.0:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/prettier-plugin-svelte/-/prettier-plugin-svelte-2.1.1.tgz#e6613cac4292b5bbda5250680565c131b0da5ced"
+  integrity sha512-U0gRsdJtveyusHd86OUPD+lEVd13bHPPF/CZD/csKjz0Y+Cv4WbUy9x8tA5vaHFtf0tsu8Yb1MrfuhN3GH2gig==
 
 prettier@^2.2.1:
   version "2.2.1"
@@ -583,10 +583,10 @@ prism-svelte@^0.4.7:
   resolved "https://registry.npmjs.org/prism-svelte/-/prism-svelte-0.4.7.tgz#fbc6709450b4e2ed660ddb82c3718817fc584cbe"
   integrity sha512-yABh19CYbM24V7aS7TuPYRNMqthxwbvx6FF/Rw920YbyBWO3tnyPIqRMgHuSVsLmuHkkBS1Akyof463FVdkeDQ==
 
-prismjs@^1.22.0:
-  version "1.22.0"
-  resolved "https://registry.npmjs.org/prismjs/-/prismjs-1.22.0.tgz#73c3400afc58a823dd7eed023f8e1ce9fd8977fa"
-  integrity sha512-lLJ/Wt9yy0AiSYBf212kK3mM5L8ycwlyTlSxHBAneXLR0nzFMlZ5y7riFPF3E33zXOF2IH95xdY5jIyZbM9z/w==
+prismjs@^1.23.0:
+  version "1.23.0"
+  resolved "https://registry.yarnpkg.com/prismjs/-/prismjs-1.23.0.tgz#d3b3967f7d72440690497652a9d40ff046067f33"
+  integrity sha512-c29LVsqOaLbBHuIbsTxaKENh1N2EQBOHaWv7gkHN4dgRbxSREqDnDbtFJYdpPauS4YCplMSNCABQ6Eeor69bAA==
   optionalDependencies:
     clipboard "^2.0.0"
 
@@ -652,10 +652,10 @@ rollup-pluginutils@^2.8.2:
   dependencies:
     estree-walker "^0.6.1"
 
-rollup@^2.35.1:
-  version "2.35.1"
-  resolved "https://registry.npmjs.org/rollup/-/rollup-2.35.1.tgz#e6bc8d10893556a638066f89e8c97f422d03968c"
-  integrity sha512-q5KxEyWpprAIcainhVy6HfRttD9kutQpHbeqDTWnqAFNJotiojetK6uqmcydNMymBEtC4I8bCYR+J3mTMqeaUA==
+rollup@^2.36.2:
+  version "2.38.1"
+  resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.38.1.tgz#ecea0f7ce6ef2c1f023fdb79524eb7aeb670ea79"
+  integrity sha512-q07T6vU/V1kqM8rGRRyCgEvIQcIAXoKIE5CpkYAlHhfiWM1Iuh4dIPWpIbqFngCK6lwAB2aYHiUVhIbSWHQWhw==
   optionalDependencies:
     fsevents "~2.1.2"
 
@@ -715,10 +715,10 @@ supports-color@^7.0.0, supports-color@^7.1.0:
   dependencies:
     has-flag "^4.0.0"
 
-svelte-check@^1.1.26:
-  version "1.1.26"
-  resolved "https://registry.yarnpkg.com/svelte-check/-/svelte-check-1.1.26.tgz#e29dec0a51714613796d38d0c568a69d1b569881"
-  integrity sha512-IDi6KwDUSryxo5+F2Ru8oRMdaZse9c2UW8DJEjXAIYitn7qb0acNDj6WOK/4E1TlgDesO5MzS0SoeHZg5qUonQ==
+svelte-check@^1.1.31:
+  version "1.1.31"
+  resolved "https://registry.yarnpkg.com/svelte-check/-/svelte-check-1.1.31.tgz#8cc0945b678aa6848c3991827e10d168b6b6b8ab"
+  integrity sha512-FUi32gqR7g/9XjRB0qmldxqxm/ksLLQULM7P0tSwX21rOpV43UypZ7ThblaMCPpVnKrB+UqA4JRqEGNHUakLdg==
   dependencies:
     chalk "^4.0.0"
     chokidar "^3.4.1"
@@ -739,12 +739,12 @@ svelte-preprocess@^4.0.0:
     detect-indent "^6.0.0"
     strip-indent "^3.0.0"
 
-svelte-readme@^2.2.0:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/svelte-readme/-/svelte-readme-2.2.0.tgz#9cd466af7e873a6eb62aa9924d051292d8ec1111"
-  integrity sha512-KeDzhpL/ayoXsEkuMieHnDIK77qYFV5w1Ok/fY4mZUPIMLc3zptLICObME4gkQ0F7hpX5oQe1cgWdTKnsv24Fg==
+svelte-readme@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/svelte-readme/-/svelte-readme-3.0.0.tgz#566a525ad15a25fba2af7add77e5843653f39b22"
+  integrity sha512-0cT04B0XrhEdlhm3Ks1TSSB4ZA1TkNaLAekL1ORaEVVkMlh+bKjwwyNk2bkrFnHJAxbXc7rU5AZnHP2joz1JMw==
   dependencies:
-    "@rollup/plugin-node-resolve" "^11.0.1"
+    "@rollup/plugin-node-resolve" "^11.1.0"
     "@rollup/plugin-virtual" "^2.0.3"
     fs-extra "^9.0.1"
     html-minifier "^4.0.0"
@@ -752,17 +752,17 @@ svelte-readme@^2.2.0:
     markdown-it "^12.0.4"
     markdown-it-anchor "^6.0.1"
     prettier "^2.2.1"
-    prettier-plugin-svelte "^1.4.2"
+    prettier-plugin-svelte "^2.1.0"
     prism-svelte "^0.4.7"
-    prismjs "^1.22.0"
-    rollup "^2.35.1"
+    prismjs "^1.23.0"
+    rollup "^2.36.2"
     rollup-plugin-svelte "^7.0.0"
     rollup-plugin-terser "^7.0.2"
 
-svelte@^3.31.2:
-  version "3.31.2"
-  resolved "https://registry.yarnpkg.com/svelte/-/svelte-3.31.2.tgz#d2ddf6cacbb95e4cc3796207510b660a25586324"
-  integrity sha512-TxZGrXzX2ggFH3BIKY5fmbeMdJuZrMIMDYPMX6R9255bueuYIuVaBQSLUeY2oD7W4IdeqRZiAVGCjDw2POKBRA==
+svelte@^3.32.1:
+  version "3.32.1"
+  resolved "https://registry.yarnpkg.com/svelte/-/svelte-3.32.1.tgz#c4b6e35517d0ed77e652cc8964ef660afa2f70f3"
+  integrity sha512-j1KmD2ZOU0RGq1/STDXjwfh0/eJ/Deh2NXyuz1bpR9eOcz9yImn4CGxXdbSAN7cMTm9a7IyPUIbuBCzu/pXK0g==
 
 terser@^5.0.0:
   version "5.5.0"

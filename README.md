@@ -6,7 +6,7 @@
 
 This component sets the theme based on the user’s preferred color scheme using [window.matchMedia](https://developer.mozilla.org/en-US/docs/Web/API/Window/matchMedia).
 
-The preferred theme is persisted locally with the [window.localStorage API](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage).
+The preferred theme is persisted using the [window.localStorage API](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage).
 
 <!-- REPO_URL -->
 
@@ -48,7 +48,7 @@ The initial `theme` is set to either `"dark"` or `"light"` based on the user’s
 <DarkMode bind:theme />
 
 <h1>This is {theme} mode.</h1>
-<p>Change the theme and reload the page. The theme should be persisted.</p>
+<p>Change the theme and reload the page.</p>
 
 <button type="button" on:click={() => (theme = switchTheme)}>
   Switch to {switchTheme} mode
@@ -130,5 +130,5 @@ localStorage.getItem("custom-theme-key"); // "dark" || "light"
 
 [MIT](LICENSE)
 
-[npm]: https://img.shields.io/npm/v/svelte-dark-mode.svg?color=blue&style=for-the-badge
+[npm]: https://img.shields.io/npm/v/svelte-dark-mode.svg?color=%23ff3e00&style=for-the-badge
 [npm-url]: https://npmjs.com/package/svelte-dark-mode
