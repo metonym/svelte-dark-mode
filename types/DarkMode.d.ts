@@ -1,15 +1,17 @@
 /// <reference types="svelte" />
 import { SvelteComponentTyped } from "svelte";
 
-export type Theme = null | "dark" | "light";
+export type Theme = "dark" | "light";
 
 export interface DarkModeProps {
   /**
-   * @default null
+   * The current theme
+   * @default "dark"
    */
   theme?: Theme;
 
   /**
+   * Customize the local storage key that stores the current theme
    * @default "theme"
    */
   key?: string;

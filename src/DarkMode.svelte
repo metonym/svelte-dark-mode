@@ -1,39 +1,49 @@
 <script>
   /**
-   * @typedef {null | "dark" | "light"} Theme
+   * @typedef {"dark" | "light"} Theme
+   * @event {Theme} change
    */
 
   /** @type {Theme} */
-  export let theme = null;
+  export let theme = "dark";
+
+  /**
+   * Customize the local storage key that stores the current theme
+   * @type {string}
+   */
   export let key = "theme";
 
   import { onMount, afterUpdate, createEventDispatcher } from "svelte";
 
+  const SCHEME = "(prefers-color-scheme: dark)";
+  const THEME = {
+    dark: "dark",
+    light: "light",
+  };
+
   const dispatch = createEventDispatcher();
-
-  const prefersDarkMode = () =>
-    matchMedia("(prefers-color-scheme: dark)").matches + "";
-
-  function systemPreferenceChange() {
-    const system_theme = localStorage.getItem("system-theme");
-    const matches = prefersDarkMode();
-
-    if (system_theme !== matches) localStorage.setItem("system-theme", matches);
-
-    return system_theme != null && system_theme !== matches;
-  }
+  const validTheme = (t) => t in THEME;
+  const handleChange = (e) => (theme = e.matches ? THEME.dark : THEME.light);
 
   onMount(() => {
-    theme = localStorage.getItem(key);
+    const darkMode = matchMedia(SCHEME);
+    const persisted_theme = localStorage.getItem(key);
 
-    if (!theme || systemPreferenceChange()) {
-      theme = prefersDarkMode() === "true" ? "dark" : "light";
+    if (validTheme(persisted_theme)) {
+      theme = persisted_theme;
+    } else {
+      theme = darkMode.matches ? THEME.dark : THEME.light;
     }
+
+    darkMode.addEventListener("change", handleChange);
+
+    return () => {
+      darkMode.removeEventListener("change", handleChange);
+    };
   });
 
   afterUpdate(() => {
-    if (theme) {
-      /** @event {Theme} change */
+    if (validTheme(theme)) {
       dispatch("change", theme);
       localStorage.setItem(key, theme);
     }

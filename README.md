@@ -4,11 +4,11 @@
 
 > Support dark mode in your Svelte apps.
 
+<!-- REPO_URL -->
+
 This component sets the theme based on the user’s preferred color scheme using [window.matchMedia](https://developer.mozilla.org/en-US/docs/Web/API/Window/matchMedia).
 
 The preferred theme is persisted using the [window.localStorage API](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage).
-
-<!-- REPO_URL -->
 
 ---
 
@@ -26,7 +26,7 @@ npm i -D svelte-dark-mode
 
 ### Basic
 
-The initial `theme` is set to either `"dark"` or `"light"` based on the user’s system preference.
+The `theme` is set to either `"dark"` or `"light"` based on the user’s system preference.
 
 ```svelte
 <script>
@@ -38,6 +38,15 @@ The initial `theme` is set to either `"dark"` or `"light"` based on the user’s
   $: document.body.className = theme; // "dark" or "light"
 </script>
 
+<DarkMode bind:theme />
+
+<h1>This is {theme} mode.</h1>
+<p>Change the theme and reload the page.</p>
+
+<button on:click={() => (theme = switchTheme)}>
+  Switch to {switchTheme} mode
+</button>
+
 <style>
   :global(.dark) {
     background: #032f62;
@@ -45,19 +54,11 @@ The initial `theme` is set to either `"dark"` or `"light"` based on the user’s
   }
 </style>
 
-<DarkMode bind:theme />
-
-<h1>This is {theme} mode.</h1>
-<p>Change the theme and reload the page.</p>
-
-<button type="button" on:click={() => (theme = switchTheme)}>
-  Switch to {switchTheme} mode
-</button>
 ```
 
 ### Server-side rendering (SSR)
 
-If you use server-side rendering (SSR), employ the `afterUpdate` lifecycle when accessing `document.body` or `document.documentElement`.
+When using server-side rendering (SSR), employ the `afterUpdate` lifecycle to access `document.body` or `document.documentElement`.
 
 ```html
 <script>
@@ -71,7 +72,7 @@ If you use server-side rendering (SSR), employ the `afterUpdate` lifecycle when 
 
 ### System preference change
 
-If the user changes their color scheme preference at the system level, the theme will be updated when the page is reloaded.
+The theme will automatically be updated if the user changes their color scheme preference at the system level.
 
 ### Custom `localStorage` key
 
@@ -89,10 +90,10 @@ localStorage.getItem("custom-theme-key"); // "dark" || "light"
 
 ### Props
 
-| Prop name | Value                                   |
-| :-------- | :-------------------------------------- |
-| theme     | `"dark"` or `"light"` (default: `null`) |
-| key       | `string` (default: `"theme"`)           |
+| Prop name | Value                                     |
+| :-------- | :---------------------------------------- |
+| theme     | `"dark"` or `"light"` (default: `"dark"`) |
+| key       | `string` (default: `"theme"`)             |
 
 ### Dispatched events
 
@@ -111,11 +112,11 @@ localStorage.getItem("custom-theme-key"); // "dark" || "light"
   bind:theme
   on:change={(e) => {
     events = [...events, e.detail];
-    console.log(e.detail); // "dark" | "light"
   }}
 />
 
-{events.join(', ')}
+{events.join(", ")}
+
 ```
 
 ## TypeScript
