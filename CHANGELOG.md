@@ -9,6 +9,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Set theme in `document.body` or `document.documentElement` by default
 
+## [1.0.0](https://github.com/metonym/svelte-dark-mode/releases/tag/v1.0.0) - 2021-03-07
+
+**Breaking Changes**
+
+- `theme` type changed to `"dark" | "light"`
+
+**Features**
+
+- validate the `theme` value at runtime (must be either "dark" or "light")
+- add event listener to automatically update the theme
+
 ## [0.3.0](https://github.com/metonym/svelte-dark-mode/releases/tag/v0.3.0) - 2020-12-22
 
 - use `SvelteComponentTyped` interface in TypeScript definitions
