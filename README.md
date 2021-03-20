@@ -76,11 +76,15 @@ The theme will automatically be updated if the user changes their color scheme p
 
 ### Custom `localStorage` key
 
-By default, this component uses `"theme"` as the key to persist the theme. Supply your own local storage key using the `"key"` prop.
+Use the `key` prop to customize the local storage key used to track the persisted theme.
+
+By default, the key is `"theme"`.
 
 ```html
 <DarkMode key="custom-theme-key" />
 ```
+
+Use the `localStorage.getItem` API to programmatically access the stored value.
 
 ```js
 localStorage.getItem("custom-theme-key"); // "dark" || "light"
