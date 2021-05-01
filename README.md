@@ -108,9 +108,7 @@ localStorage.getItem("custom-theme-key"); // "dark" || "light"
   let events = [];
 </script>
 
-<button type="button" on:click={() => (theme = switchTheme)}>
-  Toggle theme
-</button>
+<button on:click={() => (theme = switchTheme)}> Toggle theme </button>
 
 <DarkMode
   bind:theme
