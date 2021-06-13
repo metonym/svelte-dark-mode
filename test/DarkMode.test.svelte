@@ -9,6 +9,7 @@
   $: document.body.className = theme; // "dark" or "light"
 </script>
 
+<!-- svelte-ignore missing-declaration -->
 <DarkMode
   key="key"
   bind:theme
