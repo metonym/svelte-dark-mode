@@ -16,10 +16,7 @@
   import { onMount, afterUpdate, createEventDispatcher } from "svelte";
 
   const SCHEME = "(prefers-color-scheme: dark)";
-  const THEME = {
-    dark: "dark",
-    light: "light",
-  };
+  const THEME = { dark: "dark", light: "light" };
 
   const dispatch = createEventDispatcher();
   const validTheme = (t) => t in THEME;

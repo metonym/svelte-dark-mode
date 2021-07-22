@@ -16,9 +16,15 @@ The preferred theme is persisted using the [window.localStorage API](https://dev
 
 ## Install
 
+**Yarn**
+
 ```bash
 yarn add -D svelte-dark-mode
-# OR
+```
+
+**NPM**
+
+```bash
 npm i -D svelte-dark-mode
 ```
 
@@ -53,7 +59,6 @@ The `theme` is set to either `"dark"` or `"light"` based on the user’s system 
     color: #f1f8ff;
   }
 </style>
-
 ```
 
 ### Server-side rendering (SSR)
@@ -110,20 +115,16 @@ localStorage.getItem("custom-theme-key"); // "dark" || "light"
 
 <button on:click={() => (theme = switchTheme)}> Toggle theme </button>
 
-<DarkMode
-  bind:theme
-  on:change={(e) => {
-    events = [...events, e.detail];
-  }}
-/>
+<DarkMode bind:theme on:change={(e) => (events = [...events, e.detail])} />
 
 {events.join(", ")}
-
 ```
 
 ## TypeScript
 
 `svelte` version 3.31 or greater is required to use this component with TypeScript.
+
+TypeScript definitions are located in the [types folder](./types).
 
 ## Changelog
 
