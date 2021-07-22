@@ -14,7 +14,7 @@ The preferred theme is persisted using the [window.localStorage API](https://dev
 
 <!-- TOC -->
 
-## Install
+## Installation
 
 **Yarn**
 
