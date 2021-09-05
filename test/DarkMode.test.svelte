@@ -1,6 +1,6 @@
 <script lang="ts">
   import DarkMode from "../types";
-  import { Theme } from "../types/DarkMode";
+  import { Theme } from "../types/DarkMode.svelte";
 
   let theme: Theme = "light";
   let switchTheme: Theme;
