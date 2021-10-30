@@ -41,7 +41,7 @@ The `theme` is set to either `"dark"` or `"light"` based on the user’s system 
   let theme;
 
   $: switchTheme = theme === "dark" ? "light" : "dark";
-  $: document.body.className = theme; // "dark" or "light"
+  $: document.body.className = theme;
 </script>
 
 <DarkMode bind:theme />
@@ -65,14 +65,19 @@ The `theme` is set to either `"dark"` or `"light"` based on the user’s system 
 
 When using server-side rendering (SSR), employ the `afterUpdate` lifecycle to access `document.body` or `document.documentElement`.
 
-```html
+```svelte no-eval
 <script>
+  import DarkMode from "svelte-dark-mode";
   import { afterUpdate } from "svelte";
 
+  let theme;
+
   afterUpdate(() => {
-    document.body.className = theme;
+    document.body.className = theme; // "dark" or "light"
   });
 </script>
+
+<DarkMode bind:theme />
 ```
 
 ### System preference change
@@ -85,7 +90,7 @@ Use the `key` prop to customize the local storage key used to track the persiste
 
 By default, the key is `"theme"`.
 
-```html
+```svelte no-eval
 <DarkMode key="custom-theme-key" />
 ```
 
@@ -108,16 +113,12 @@ localStorage.getItem("custom-theme-key"); // "dark" || "light"
 
 - **on:change**: dispatched when `theme` is updated
 
-```svelte
-<script>
-  let events = [];
-</script>
-
-<button on:click={() => (theme = switchTheme)}> Toggle theme </button>
-
-<DarkMode bind:theme on:change={(e) => (events = [...events, e.detail])} />
-
-{events.join(", ")}
+```svelte no-eval
+<DarkMode
+  on:change={(e) => {
+    console.log(e.detail); // "dark" | "light"
+  }}
+/>
 ```
 
 ## TypeScript
