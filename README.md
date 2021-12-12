@@ -28,6 +28,12 @@ yarn add -D svelte-dark-mode
 npm i -D svelte-dark-mode
 ```
 
+**pnpm**
+
+```bash
+pnpm i -D svelte-dark-mode
+```
+
 ## Usage
 
 ### Basic
