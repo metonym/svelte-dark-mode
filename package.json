@@ -17,9 +17,9 @@
     "test": "svelte-check --workspace test"
   },
   "devDependencies": {
-    "svelte": "^3.44.0",
-    "svelte-check": "^2.2.7",
-    "svelte-readme": "^3.6.0"
+    "svelte": "^3.44.2",
+    "svelte-check": "^2.2.10",
+    "svelte-readme": "^3.6.1"
   },
   "repository": {
     "type": "git",
