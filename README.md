@@ -118,10 +118,10 @@ localStorage.getItem("custom-theme-key"); // "dark" || "light"
 
 ### Props
 
-| Prop name | Value                                     |
-| :-------- | :---------------------------------------- |
-| theme     | `"dark"` or `"light"` (default: `"dark"`) |
-| key       | `string` (default: `"theme"`)             |
+| Name  | Type                  | Default value |
+| :---- | :-------------------- | :------------ |
+| theme | `"dark"` or `"light"` | `"dark"`      |
+| key   | `string`              | `"theme"`     |
 
 ### Dispatched events
 
