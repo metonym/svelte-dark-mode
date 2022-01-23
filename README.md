@@ -86,6 +86,14 @@ When using server-side rendering (SSR), employ the `afterUpdate` lifecycle to ac
 <DarkMode bind:theme />
 ```
 
+An alternative to the `afterUpdate` lifecycle hook is to check if the type of `window` is undefined.
+
+```js no-eval
+$: if (typeof window !== "undefined") {
+  document.body.className = theme;
+}
+```
+
 ### System preference change
 
 The theme will automatically be updated if the user changes their color scheme preference at the system level.
