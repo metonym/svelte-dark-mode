@@ -4,11 +4,15 @@
    * @event {Theme} change
    */
 
-  /** @type {Theme} */
+  /**
+   * The current theme.
+   * @type {Theme}
+   */
   export let theme = "dark";
 
   /**
-   * Customize the local storage key that stores the current theme
+   * Specify a custom local storage key
+   * to store the current theme.
    * @type {string}
    */
   export let key = "theme";
@@ -19,7 +23,11 @@
   const THEME = { dark: "dark", light: "light" };
 
   const dispatch = createEventDispatcher();
+
+  /** @type {(t: unknown) => boolean} */
   const validTheme = (t) => t in THEME;
+
+  /** @type {(e: MediaQueryListEvent) => Theme} */
   const handleChange = (e) => (theme = e.matches ? THEME.dark : THEME.light);
 
   onMount(() => {
@@ -33,10 +41,7 @@
     }
 
     darkMode.addEventListener("change", handleChange);
-
-    return () => {
-      darkMode.removeEventListener("change", handleChange);
-    };
+    return () => darkMode.removeEventListener("change", handleChange);
   });
 
   afterUpdate(() => {

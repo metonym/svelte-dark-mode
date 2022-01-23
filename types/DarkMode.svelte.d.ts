@@ -5,13 +5,14 @@ export type Theme = "dark" | "light";
 
 export interface DarkModeProps {
   /**
-   * The current theme
+   * The current theme.
    * @default "dark"
    */
   theme?: Theme;
 
   /**
-   * Customize the local storage key that stores the current theme
+   * Specify a custom local storage key
+   * to store the current theme.
    * @default "theme"
    */
   key?: string;
