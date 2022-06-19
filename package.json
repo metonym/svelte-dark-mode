@@ -7,7 +7,7 @@
   "svelte": "./src/index.js",
   "main": "./lib/index.js",
   "module": "./lib/index.mjs",
-  "types": "./types/index.d.ts",
+  "types": "./src/index.d.ts",
   "sideEffects": false,
   "scripts": {
     "dev": "rollup -cw",
@@ -20,9 +20,11 @@
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^1.0.0-next.49",
     "@testing-library/svelte": "^3.1.3",
+    "@testing-library/user-event": "^14.2.1",
     "jsdom": "^19.0.0",
     "svelte": "^3.48.0",
     "svelte-check": "^2.7.2",
+    "svelte-preprocess": "^4.10.7",
     "svelte-readme": "^3.6.3",
     "typescript": "^4.7.4",
     "vitest": "^0.15.1"
@@ -44,7 +46,6 @@
   ],
   "files": [
     "lib",
-    "src",
-    "types"
+    "src"
   ]
 }
