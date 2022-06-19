@@ -1,6 +1,6 @@
 <script lang="ts">
-  import DarkMode from "../types";
-  import { Theme } from "../types/DarkMode.svelte";
+  import DarkMode from "../src";
+  import type { Theme } from "../src/DarkMode.svelte";
 
   let theme: Theme = "light";
   let switchTheme: Theme;
@@ -9,7 +9,6 @@
   $: document.body.className = theme; // "dark" or "light"
 </script>
 
-<!-- svelte-ignore missing-declaration -->
 <DarkMode
   key="key"
   bind:theme
@@ -21,15 +20,8 @@
 <h1>This is {theme} mode.</h1>
 <p>Change the theme and reload the page. The theme should be persisted.</p>
 
-<button
-  type="button"
-  on:click={() => {
-    theme = switchTheme;
-  }}
->
-  Switch to
-  {switchTheme}
-  mode
+<button on:click={() => (theme = switchTheme)}>
+  Switch to {switchTheme} mode
 </button>
 
 <style>

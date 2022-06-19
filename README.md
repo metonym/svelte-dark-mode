@@ -16,21 +16,14 @@ The preferred theme is persisted using the [window.localStorage API](https://dev
 
 ## Installation
 
-**Yarn**
-
 ```bash
+# Yarn
 yarn add -D svelte-dark-mode
-```
 
-**NPM**
-
-```bash
+# npm
 npm i -D svelte-dark-mode
-```
 
-**pnpm**
-
-```bash
+# pnpm
 pnpm i -D svelte-dark-mode
 ```
 
@@ -134,12 +127,6 @@ localStorage.getItem("custom-theme-key"); // "dark" || "light"
   }}
 />
 ```
-
-## TypeScript
-
-`svelte` version 3.31 or greater is required to use this component with TypeScript.
-
-TypeScript definitions are located in the [types folder](./types).
 
 ## Changelog
 
