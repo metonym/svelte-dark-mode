@@ -128,12 +128,6 @@ localStorage.getItem("custom-theme-key"); // "dark" || "light"
 />
 ```
 
-## TypeScript
-
-`svelte` version 3.31 or greater is required to use this component with TypeScript.
-
-TypeScript definitions are located in the [types folder](./types).
-
 ## Changelog
 
 [CHANGELOG.md](CHANGELOG.md)
