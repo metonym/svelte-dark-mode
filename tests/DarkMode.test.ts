@@ -10,19 +10,7 @@ const MatchMediaMock = vi.fn(() => ({
 
 vi.stubGlobal("matchMedia", MatchMediaMock);
 
-const LocalStorageMock = {
-  storage: new Map(),
-  setItem<TKey = any, TValue = any>(key: TKey, value: TValue) {
-    this.storage.set(key, value);
-  },
-  getItem<TKey = any>(key: TKey) {
-    return this.storage.get(key);
-  },
-};
-
-vi.stubGlobal("localStorage", LocalStorageMock);
-
-const consoleLog = vi.spyOn(console, "log").mockImplementation(() => {});
+const consoleLog = vi.spyOn(console, "log");
 
 describe("svelte-dark-mode", () => {
   let instance: null | SvelteComponent = null;
