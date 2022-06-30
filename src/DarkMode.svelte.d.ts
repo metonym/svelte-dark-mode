@@ -1,4 +1,4 @@
-import { SvelteComponentTyped } from "svelte";
+import type { SvelteComponentTyped } from "svelte";
 
 export type Theme = "dark" | "light";
 
