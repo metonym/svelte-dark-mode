@@ -1,7 +1,6 @@
 <script>
   /**
    * @typedef {"dark" | "light"} Theme
-   * @event {Theme} change
    */
 
   /**
