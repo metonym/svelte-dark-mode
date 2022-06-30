@@ -1,7 +1,6 @@
 <script>
   /**
    * @typedef {"dark" | "light"} Theme
-   * @event {Theme} change
    */
 
   /**
@@ -13,7 +12,6 @@
   /**
    * Specify a custom local storage key
    * to store the current theme.
-   * @type {string}
    */
   export let key = "theme";
 
